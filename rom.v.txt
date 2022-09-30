@@ -1,0 +1,45 @@
+//mohamed sabry mahmoud shehab eldean >>>>>sec:17
+module rom(pcount,tcount,wtime);
+input [2:0] pcount;
+input [1:0]tcount;
+output wtime;
+reg [7:0] wtime = 8'b00000000;
+reg [4:0] temp;
+//when tcount =0 wtime =0;else wtime=value.
+//-------------the first three bit for pcount and last two bit for tcount -------------.
+//---------wtime>>>>>>>>>>waiting time for everyone----------------- .
+always @ (*)
+begin 
+temp<={pcount,tcount};
+  case (temp)
+	00001:wtime<=8'b00000000;
+	00101:wtime<=8'b00000011;
+	01001:wtime<=8'b00000110;
+	01101:wtime<=8'b00001001;
+	10001:wtime<=8'b00001100;
+	10101:wtime<=8'b00001111;
+	11001:wtime<=8'b00010010;
+	11101:wtime<=8'b00010101;
+	00010:wtime<=8'b00000010;
+	00110:wtime<=8'b00000011;
+	01010:wtime<=8'b00000101;
+	01110:wtime<=8'b00000110;
+	10010:wtime<=8'b00001000;
+	10110:wtime<=8'b00001001;
+	11010:wtime<=8'b00001011;
+	11110:wtime<=8'b00001100;
+	00011:wtime<=8'b00000010;
+	00111:wtime<=8'b00000011;
+	01011:wtime<=8'b00000100;
+	01111:wtime<=8'b00000101;
+	10011:wtime<=8'b00000110;
+	10111:wtime<=8'b00000111;
+	11011:wtime<=8'b00001000;
+	11111:wtime<=8'b00001001;
+	default:wtime<=8'b00000000;
+	endcase
+ end
+
+  endmodule
+//-------------------------------------------------
+//--------endfile-----------------------------------
