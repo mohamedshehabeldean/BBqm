@@ -1,4 +1,4 @@
-# BBqm
+# BBqm using veriog
 The manager of the BanhaBank bank branch, located in a BFCAI, is proposing to install an
 
 embedded system to monitor the client queue in front of the tellers. The proposed system,
